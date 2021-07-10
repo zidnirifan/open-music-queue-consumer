@@ -16,13 +16,13 @@ class Listener {
         playlistId,
       );
 
-      console.log('Sending Mail ...');
+      console.log('Sending Email ...');
       const result = await this._mailSender.sendEmail(
         targetEmail,
         JSON.stringify(playlistSongs),
       );
 
-      console.log('Mail successfully sent to:', result.accepted[0]);
+      console.log('Email successfully sent to:', result.accepted[0]);
     } catch (error) {
       console.error(error);
     }
