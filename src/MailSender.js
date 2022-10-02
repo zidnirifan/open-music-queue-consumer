@@ -3,11 +3,10 @@ const nodemailer = require('nodemailer');
 class MailSender {
   constructor() {
     this._transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
+      host: process.env.MAIL_HOST,
+      port: process.env.MAIL_PORT,
       auth: {
-        user: process.env.MAIL_ADDRESS,
+        user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASSWORD,
       },
     });
